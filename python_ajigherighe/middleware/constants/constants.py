@@ -11,6 +11,7 @@ QUIT_CODE = "Q"
 # easily.
 VALID_HOMEWORK_OPTIONS = {
     "1": "Python Syntax 101",
+    "2": "Object Oriented Programming"
 }
 
 VALID_LEVEL1_OPTIONS = {

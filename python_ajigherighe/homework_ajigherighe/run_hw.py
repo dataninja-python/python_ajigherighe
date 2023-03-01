@@ -11,6 +11,8 @@ def select_homework():
     # 3. you should be able to quit
     # 4. you should get an error for invalid selections
     print(constants.VALID_HOMEWORK_OPTIONS)
+    options = constants.VALID_HOMEWORK_OPTIONS.keys()
+    print(f"Valid options are:{options}")
     pass
 
 
@@ -25,6 +27,7 @@ def main_homework():
     # display to user where we are in the program
     print("\n############################################################################")
     print("This function allows the selection of homework solutions ready for review.")
+    print("These homework assignments are for: Akpovogho 'AJ' Igherighe")
     print("############################################################################\n")
     select_homework()
 
