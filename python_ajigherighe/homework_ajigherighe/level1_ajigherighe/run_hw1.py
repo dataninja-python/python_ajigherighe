@@ -22,7 +22,7 @@ def overview():
 
 
 # This is the main function that runs each Level 1 homework section
-def level1():
+def main_hw1():
     overview()
 
 
@@ -32,4 +32,4 @@ def level1():
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
     # print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    level1()
+    main_hw1()
