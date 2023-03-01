@@ -5,8 +5,8 @@
 ################################################################################################################
 
 # imports from built in and created packages
-from hw1_constants import HELLO_LIST as HELLO
-from Middlewares import helpers
+from level1_constants import HELLO_LIST as HELLO
+from homework_ajigherighe.middleware import helpers
 
 
 # this is the solution to 1.1.1

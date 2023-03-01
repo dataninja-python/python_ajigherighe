@@ -4,14 +4,13 @@
 # This contains items used in the homework for level 1
 ################################################################################################################
 
-import hw1_functions
 
+# This function prints out useful information to the grader
 def overview():
     """
-    This function introduces this homework section to the grader.
-    :return:
+    This function introduces the level 1 homework section.
+    :return: None
     """
-    print("")
     print("###########################################################")
     print("This is the Exercise submission for: Level 1: Python Syntax 101")
     print("It contains submissions for: Exercises 1.1 - 1.6")
@@ -20,13 +19,11 @@ def overview():
     print("Student phone: 404.247.7687")
     print("###########################################################")
     print("###########################################################")
-    print("")
 
 
 # This is the main function that runs each Level 1 homework section
-def main_hw1():
+def level1():
     overview()
-    hw1_functions.hello_world()
 
 
 ################################################################################################################
@@ -35,4 +32,4 @@ def main_hw1():
 if (__name__ == '__main__'):
     print("This package can be run as a standalone module or imported into a larger program.")
     print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    main_hw1()
+    level1()
