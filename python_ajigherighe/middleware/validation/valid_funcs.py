@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from homework_ajigherighe.middleware import constants
+from python_ajigherighe.middleware.constants.constants import QUIT_CODE
 
 
 # test to see value sent can be recast into a float
@@ -31,38 +31,38 @@ def not_valid_int(test_value):
     :param test_value: a string to test if it can be an integer.
     :return: boolean. True = can not be an integer; False = can be an integer.
     """
-    print("Entering not_valid_int function...")
+    print(f"\nThis function checks if {test_value} can be cast as an integer.")
     try:
         int(test_value)
-        print(f"{test_value} can become an integer.")
+        print(f"{test_value} can become an integer.\n")
         # print("...Exiting not_valid_int function")
         return False
     except ValueError:
         # int(test_value)
         # print(ValueError)
-        print(f"{test_value} can not become an integer.")
+        print(f"{test_value} can not become an integer.\n")
         # print("...Exiting not_valid_int function")
         return True
 
 
 # test if value says you should exit the loop
-def quit_main_loop(test_value):
+def quit_loop(test_value):
     """
     Tests if you should quit the loop
     :param test_value: the input value
     :return: True if test_value equals 'q', False for any other value
     """
-    print("\nThis is the quit loop test function. It checks if the user entered 'q' or 'Q' to quit.")
+    print("\nThis function checks to see if the user wishes to quit.")
+    print(f"To quit, the user must enter {QUIT_CODE} or {QUIT_CODE.lower()}.")
+    print(f"The user entered: {test_value}.")
     user_input = test_value.lower()
     # since 'Q' or 'q' will be used throughout my code going forward I added it as a high level
     # constant that can be reached and imported from outside a specific script
-    tester = constants.QUIT_CODE.lower()
+    tester = QUIT_CODE.lower()
     if user_input == tester:
-        print(f"User entered: {user_input}.")
-        print("")
         # print("Thanks for using A.J. Igherighe's homework program.")
         # print("Again, if there are suggestions, please email them to: akpoigherighe@gmail.com.")
-        print("Quiting this loop!")
+        print("Quiting.\n")
         return True
     # print("User wishes to continue.")
     return False
@@ -76,4 +76,4 @@ def main_valid():
 # Press the green button in the gutter to run the script.
 if (__name__ == '__main__'):
     test_values = ['Q', 1, 'w', 'q', 's', 45, '!']
-    [quit_main_loop(str(item)) for item in test_values]
+    [quit_loop(str(item)) for item in test_values]
