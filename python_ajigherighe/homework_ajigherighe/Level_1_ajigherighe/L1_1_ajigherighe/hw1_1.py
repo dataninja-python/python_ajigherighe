@@ -16,7 +16,8 @@
 #   - Python 3.9.13
 #   - Unzip and open the entire 'python_ajigherighe folder' as a project
 #       - NOTE: non-tested but shared functionality is stored in the 'hw1_helpers.py' file
-#   - Terminal/Shell
+#   - PyCharm
+#   - Terminal/Shell (optional if using PyCharm)
 
 from python_ajigherighe.homework_ajigherighe.Level_1_ajigherighe import hw1_helpers
 from python_ajigherighe import helpers
@@ -30,8 +31,8 @@ from python_ajigherighe import helpers
 #   - printing the appropriate error message to coincide with the error
 # Failure:
 #   - !success
-#   - unexpected behavior
-#   - illogical code that makes it take longer than 4-10 seconds to understand this function
+#   - unexpected behavior from extra complexity
+#   - illogical code that takes longer than 10 seconds to understand
 def were_files_imported():
     """
     Function checks whether a specific imported function can be executed
@@ -49,7 +50,7 @@ def were_files_imported():
         return False
     # if not a common error, we use our custom import error
     except helpers.InvalidImportException:
-        print("This case uses our custom general import exception.")
+        print("This case uses a custom general import exception.")
         return False
 
 
@@ -60,7 +61,7 @@ def were_files_imported():
 #   - output the expected message on screen
 # Failure:
 #   - !success
-#   - illogical code that makes it take longer than 4-10 seconds to understand this function
+#   - illogical code that takes longer than 10 seconds to understand
 def display_hello_world():
     """
     Print 'Hello World!'
