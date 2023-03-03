@@ -19,39 +19,8 @@
 #   - PyCharm
 #   - Terminal/Shell (optional if using PyCharm)
 
-from python_ajigherighe.homework_ajigherighe.Level_1_ajigherighe import hw1_helpers
-from python_ajigherighe import helpers
 
-
-# Confirms the required modules/packages were imported
-# Structure: function
-# Intent: check it is possible to perform hw1_helpers.overview() function
-# Success:
-#   - 'Thanks for importing my full homework file.' output to the screen
-#   - printing the appropriate error message to coincide with the error
-# Failure:
-#   - !success
-#   - unexpected behavior from extra complexity
-#   - illogical code that takes longer than 10 seconds to understand
-def were_files_imported():
-    """
-    Function checks whether a specific imported function can be executed
-    :return: Boolean. True = function can be run because imported. False = import related error.
-    """
-    try:
-        # attempts to call the desired function within the try section
-        # if it works, returns True
-        hw1_helpers.overview()
-        type(helpers.InvalidImportException)
-        return True
-    # function failed. now, we check if it is a common import error
-    except ModuleNotFoundError:
-        print("It is a common 'module not found error'")
-        return False
-    # if not a common error, we use our custom import error
-    except helpers.InvalidImportException:
-        print("This case uses a custom general import exception.")
-        return False
+from python_ajigherighe.homework_ajigherighe.Level_1_ajigherighe.L1_1_ajigherighe import hw1_1
 
 
 # This function checks if the string is empty ( x == "" ).
@@ -67,9 +36,26 @@ def is_empty_string(string_to_check):
     Checks if the supplied list is empty
     :return: Boolean. False = empty list. True = !False.
     """
-    if string_to_check:
+    if not string_to_check:
         return True
     return False
+
+
+# This function replaces the space between words with a supplied separator.
+# Structure: function
+# Intent: replace a desired character with a separator
+# Success:
+#   - return copy of the supplied string with replacements made
+# Failure:
+#   - !success
+#   - illogical code that takes longer than 10 seconds to understand
+def replace_space(input_string, replace_this, replace_with):
+    """
+    Replaces the 'replace_this' with the 'replace_with' ascii code in a new string
+    :return: Copy of the string after replacement.
+    """
+    output_string = input_string.replace(replace_this, replace_with)
+    return output_string
 
 
 # This function takes the provided string and, if not empty, displays it as desired
@@ -88,12 +74,15 @@ def display_string(a_string="", replace_space_with=' '):
     print("The goal is to display each word in 'Hello World!' on new line on the screen.")
     print("My definition of this problem (after looking at the next exercise as well) is to create a function that")
     print("replaces the space between 'Hello World!' with the ascii symbols for a new line and tab.")
-    print(f"{a_string} is the supplied string. {a_string} is empty = {is_empty_string(a_string)}")
-    if is_empty_string(a_string):
-        print("We are able to proceed so the string is not empty.")
-        print(f"We seek to replace the spaces in {a_string} with {replace_space_with}")
+    print(f"'{a_string}' is the supplied string. '{a_string}' is empty = {is_empty_string(a_string)}")
+    if not is_empty_string(a_string):
+        print("\nWe are able to proceed so the string is not empty.")
+        print(f"We seek to replace the spaces in {a_string} with '{replace_space_with}'.")
         print("Here is the result to replace the space with a new line: \n")
-    print("The supplied string is empty. To proceed, provide a string.")
+        new_string = replace_space(a_string, ' ', replace_space_with)
+        print(new_string)
+    else:
+        print("\nThe supplied string is empty. To proceed, provide a string.")
 
 
 # This is the main function that runs each Level 1 homework section
@@ -109,15 +98,17 @@ def hw1_2():
     If required files are imported, the overview() and display_hello_world() functions are run.
     :return: None
     """
-    if were_files_imported():
-        hw1_helpers.overview()
-        display_string()
+    hello = 'Hello World!'
+    separator = '\n'
+    if hw1_1.were_files_imported():
+        hw1_1.hw1_helpers.overview()
+        display_string(hello, separator)
     else:
         print("Unexpected error! Please examine code.")
 
 
 ################################################################################################################
-# Putting parentheses around the '__name__ ... ' section allows us to test this as a stand alone script
+# Putting parentheses around the '__name__ ... ' section allows us to test this as a standalone script
 # and to import it as a module alone or as part of the larger package
 ################################################################################################################
 if (__name__ == '__main__'):
