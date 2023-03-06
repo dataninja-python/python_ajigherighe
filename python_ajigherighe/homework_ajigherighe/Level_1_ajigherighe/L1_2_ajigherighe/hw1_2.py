@@ -66,20 +66,21 @@ def replace_space(input_string, replace_this, replace_with):
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def display_string(a_string="", replace_space_with=' '):
+def display_string(a_string="", to_replace=" ", separator=" "):
     """
-    Replace spaces in the supplied string with the provided ascii code
+    Replace desired element in the supplied string with the provided string
     :return: None
     """
-    print("The goal is to display each word in 'Hello World!' on new line on the screen.")
-    print("My definition of this problem (after looking at the next exercise as well) is to create a function that")
-    print("replaces the space between 'Hello World!' with the ascii symbols for a new line and tab.")
-    print(f"'{a_string}' is the supplied string. '{a_string}' is empty = {is_empty_string(a_string)}")
+    print("The goal is to display each word in 'Hello World!' on the screen as desired.")
+    print("My definition of this problem (after looking at the next exercise as well) is to create this function that")
+    print("for homework 1.2 it replaces the 'Hello World!' space with a new line.")
+    print("for homework 1.3 it replaces the 'Hello World!' space with a tab.")
+    print("Right now, the ascii codes used are hardcoded but this can be rewritten to allow inputing any valid code.")
     if not is_empty_string(a_string):
         print("\nWe are able to proceed so the string is not empty.")
-        print(f"We seek to replace the spaces in {a_string} with '{replace_space_with}'.")
-        print("Here is the result to replace the space with a new line: \n")
-        new_string = replace_space(a_string, ' ', replace_space_with)
+        to_screen = f"We seek to replace {to_replace} in {a_string} with {separator}."
+        print(repr(to_screen))
+        new_string = replace_space(a_string, to_replace, separator)
         print(new_string)
     else:
         print("\nThe supplied string is empty. To proceed, provide a string.")
@@ -100,9 +101,10 @@ def hw1_2():
     """
     hello = 'Hello World!'
     separator = '\n'
+    spacer = ' '
     if hw1_1.were_files_imported():
         hw1_1.hw1_helpers.overview()
-        display_string(hello, separator)
+        display_string(hello, spacer, separator)
     else:
         print("Unexpected error! Please examine code.")
 
