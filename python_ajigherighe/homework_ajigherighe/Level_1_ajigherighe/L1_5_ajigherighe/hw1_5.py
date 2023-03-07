@@ -35,12 +35,10 @@ def display_input_type():
     Display the type of the user supplied value
     :return: None
     """
-    print("The goal is to display the type of the user's input.")
-    print("My definition of this problem (after looking at the next exercise as well) is to use the")
-    print("function from 1.4 to get an input and print it using the type built-in function.")
     user_input = hw1_4.get_user_input()
-    print(f"The input is: {user_input}")
-    print(f"The type is: {type(user_input)}")
+    print(f"You entered: {user_input}")
+    print(f"Python treats your entry as the following type: {type(user_input)}")
+    print("NOTE: Python's input function by default returns a string type.")
 
 
 # This is the main function that runs each Level 1 homework section
@@ -56,6 +54,9 @@ def hw1_5():
     Gets user input and displays it to the screen.
     :return: None
     """
+    print("The goal is to homework is to display the the type of the user's input.")
+    print("My definition of this problem (after looking at the next exercise as well) is to use the")
+    print("function from 1.4 to get an input and print it using the type built-in function.")
     display_input_type()
 
 

@@ -71,11 +71,6 @@ def display_string(a_string="", to_replace=" ", separator=" "):
     Replace desired element in the supplied string with the provided string
     :return: None
     """
-    print("The goal is to display each word in 'Hello World!' on the screen as desired.")
-    print("My definition of this problem (after looking at the next exercise as well) is to create this function that")
-    print("for homework 1.2 it replaces the 'Hello World!' space with a new line.")
-    print("for homework 1.3 it replaces the 'Hello World!' space with a tab.")
-    print("Right now, the ascii codes used are hardcoded but this can be rewritten to allow inputing any valid code.")
     if not is_empty_string(a_string):
         print("\nWe are able to proceed so the string is not empty.")
         to_screen = f"We seek to replace {to_replace} in {a_string} with {separator}."
@@ -99,6 +94,11 @@ def hw1_2():
     If required files are imported, the overview() and display_hello_world() functions are run.
     :return: None
     """
+    print("The goal of this homework is to display each word in 'Hello World!' on the screen as desired.")
+    print("My definition of this problem (after looking at the next exercise as well) is to create this function that")
+    print("for homework 1.2 it replaces the 'Hello World!' space with a new line.")
+    print("for homework 1.3 it replaces the 'Hello World!' space with a tab.")
+    print("Right now, the ascii codes used are hardcoded but this can be rewritten to allow inputing any valid code.\n")
     hello = 'Hello World!'
     separator = '\n'
     spacer = ' '

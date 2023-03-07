@@ -32,15 +32,11 @@ def get_user_input():
     Capture user input
     :return: output
     """
-    print("The goal is to store a user's input in a variable.")
-    print("My definition of this problem (after looking at the next exercise as well) is to create a function that")
-    print("is able to capture user inputs in a way you can tell the type of the variable (1.5) and")
-    print("takes 2 inputs (1.6) to calculate a triangle's area.")
     output = ""
     while True:
         output = input("Please provide an input: ")
         if output == "":
-            print("Nothing entered. Please try again.")
+            print("No input detected. Are you sure you typed something? Please try again.")
             continue
 
         if output != "":
@@ -59,6 +55,10 @@ def hw1_4():
     Gets user input and displays it to the screen.
     :return: None
     """
+    print("The goal of this homework is to store a user's input in a variable.")
+    print("My definition of this problem (after looking at the next exercise as well) is to create a function that")
+    print("is able to capture user inputs in a way you can tell the type of the variable (1.5) and")
+    print("takes 2 inputs (1.6) to calculate a triangle's area.\n")
     result = get_user_input()
     print(f"You entered: {result}")
 

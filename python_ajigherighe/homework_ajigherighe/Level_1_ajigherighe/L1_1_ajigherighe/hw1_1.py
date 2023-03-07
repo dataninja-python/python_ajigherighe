@@ -41,7 +41,7 @@ def were_files_imported():
     try:
         # attempts to call the desired function within the try section
         # if it works, returns True
-        hw1_helpers.overview()
+        # hw1_helpers.overview()
         type(helpers.InvalidImportException)
         return True
     # function failed. now, we check if it is a common import error
@@ -67,9 +67,9 @@ def display_hello_world():
     Print 'Hello World!'
     :return: None
     """
-    print("The goal is to display 'Hello World!' on screen.")
-    print("Here is the result: \n")
-    print("Hello World!")
+    print("The goal of this homework is to display 'Hello World!' on screen.")
+    print("Here is the result: ")
+    print("Hello World!\n")
 
 
 # This is the main function that runs each Level 1 homework section
@@ -79,7 +79,7 @@ def hw1_1():
     :return: None
     """
     if were_files_imported():
-        hw1_helpers.overview()
+        # hw1_helpers.overview()
         display_hello_world()
     else:
         print("Unexpected error! Please examine code.")
