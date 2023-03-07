@@ -16,11 +16,11 @@ import copy
 # Requirements:
 #   - Python 3.9.13
 #   - Unzip and open the entire 'python_ajigherighe folder' as a project
-#       - NOTE: non-tested but shared functionality is stored in the 'hw1_helpers.py' file
+#       - NOTE: non-tested but shared functionality is stored in the 'L1_1_helpers.py' file
 #   - PyCharm
 #   - Terminal/Shell (optional if using PyCharm)
 
-from python_ajigherighe.homework_ajigherighe.Level_1_ajigherighe.L1_4_ajigherighe import hw1_4
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_4_ajigherighe import hw1_4
 from python_ajigherighe.constants import QUIT_CODE
 
 

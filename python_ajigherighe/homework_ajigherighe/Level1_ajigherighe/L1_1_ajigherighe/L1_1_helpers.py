@@ -44,6 +44,31 @@ def overview():
     print("###########################################################")
 
 
+# Structure: function
+# Intent: tests if a supplied parameter can be cast as an integer
+# Success:
+#   - True if parameter can be a integer. False otherwise.
+# Failure:
+#   - !success
+#   - illogical code that takes longer than 10 seconds to understand
+def valid_integer(test_value="integer"):
+    """
+    Test if a value can be cast to an integer. Approach: use the try/except built-in error checking functionality.
+    This is a useful function that likely will be reused in other homeworks and the final case. Thus, it has been
+    added to this helper file.
+    :return: Boolean. True = a float. False = !True.
+    """
+    # print(f"Testing if {test_value} can be transformed into a float")
+    try:
+        # recasting user input into a float
+        # if this fails the input is not a valid floating point number
+        # and the except clause should be triggered
+        int(test_value)
+        # print("Can become a float. Returning False.")
+        return True
+    except ValueError:
+        # print("Not a valid float.")
+        return False
+
 # overview()
 # get_this_files_location()
-

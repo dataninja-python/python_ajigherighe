@@ -15,30 +15,32 @@
 # Requirements:
 #   - Python 3.9.13
 #   - Unzip and open the entire 'python_ajigherighe folder' as a project
-#       - NOTE: non-tested but shared functionality is stored in the 'hw1_helpers.py' file
+#       - NOTE: non-tested but shared functionality is stored in the 'L1_1_helpers.py' file
 #   - PyCharm
 #   - Terminal/Shell (optional if using PyCharm)
 
-from python_ajigherighe.homework_ajigherighe.Level_1_ajigherighe.L1_4_ajigherighe import hw1_4
-
-
-# This function returns the type of the returned user input
+# This function stores a user input in a variable
 # Structure: function
-# Intent: prints the type of user input
+# Intent: captures user input in a variable
 # Success:
-#   - displays input type as desired
+#   - saving user input as desired
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def display_input_type():
+def get_user_input():
     """
-    Display the type of the user supplied value
-    :return: None
+    Capture user input
+    :return: output
     """
-    user_input = hw1_4.get_user_input()
-    print(f"You entered: {user_input}")
-    print(f"Python treats your entry as the following type: {type(user_input)}")
-    print("NOTE: Python's input function by default returns a string type.")
+    output = ""
+    while True:
+        output = input("Please provide an input: ")
+        if output == "":
+            print("No input detected. Are you sure you typed something? Please try again.")
+            continue
+
+        if output != "":
+            return output
 
 
 # This is the main function that runs each Level 1 homework section
@@ -49,15 +51,17 @@ def display_input_type():
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def hw1_5():
+def hw1_4():
     """
     Gets user input and displays it to the screen.
     :return: None
     """
-    print("The goal is to homework is to display the the type of the user's input.")
-    print("My definition of this problem (after looking at the next exercise as well) is to use the")
-    print("function from 1.4 to get an input and print it using the type built-in function.")
-    display_input_type()
+    print("The goal of this homework is to store a user's input in a variable.")
+    print("My definition of this problem (after looking at the next exercise as well) is to create a function that")
+    print("is able to capture user inputs in a way you can tell the type of the variable (1.5) and")
+    print("takes 2 inputs (1.6) to calculate a triangle's area.\n")
+    result = get_user_input()
+    print(f"You entered: {result}")
 
 
 ################################################################################################################
@@ -67,4 +71,4 @@ def hw1_5():
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
     # print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    hw1_5()
+    hw1_4()

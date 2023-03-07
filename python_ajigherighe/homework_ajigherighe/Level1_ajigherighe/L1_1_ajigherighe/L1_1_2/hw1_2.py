@@ -15,12 +15,12 @@
 # Requirements:
 #   - Python 3.9.13
 #   - Unzip and open the entire 'python_ajigherighe folder' as a project
-#       - NOTE: non-tested but shared functionality is stored in the 'hw1_helpers.py' file
+#       - NOTE: non-tested but shared functionality is stored in the 'L1_1_helpers.py' file
 #   - PyCharm
 #   - Terminal/Shell (optional if using PyCharm)
 
 
-from python_ajigherighe.homework_ajigherighe.Level_1_ajigherighe.L1_1_ajigherighe import hw1_1
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe import hw1_1
 
 
 # This function checks if the string is empty ( x == "" ).
@@ -103,7 +103,7 @@ def hw1_2():
     separator = '\n'
     spacer = ' '
     if hw1_1.were_files_imported():
-        hw1_1.hw1_helpers.overview()
+        # hw1_1.hw1_helpers.overview()
         display_string(hello, spacer, separator)
     else:
         print("Unexpected error! Please examine code.")
