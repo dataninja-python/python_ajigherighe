@@ -6,12 +6,14 @@
 
 # import all files in this homework section
 
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.hw1_1 import hw1_1 as runhw1_1
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_2_ajigherighe.hw1_2 import hw1_2 as runhw1_2
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_3_ajigherighe.hw1_3 import hw1_3 as runhw1_3
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_4_ajigherighe.hw1_4 import hw1_4 as runhw1_4
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_5_ajigherighe.hw1_5 import hw1_5 as runhw1_5
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_6_ajigherighe.hw1_6 import hw1_6 as runhw1_6
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_1.hw1_1_1 import hw1_1 as runhw1_1
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_2.hw1_1_2 import hw1_2 as runhw1_2
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_3.hw1_1_3 import hw1_3 as runhw1_3
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_4.hw1_1_4 import hw1_4 as runhw1_4
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_5.hw1_1_5 import hw1_5 as runhw1_5
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_6.hw1_1_6 import hw1_6 as runhw1_6
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_constants import \
+    L1_1_EXERCISES_DICT
 
 
 # Structure: function
@@ -23,10 +25,10 @@ from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_6_ajigherighe
 #   - illogical code that takes longer than 10 seconds to understand
 def one_one():
     """
-    Runs the main function for 1.1
+    Runs the main function for 1.1.1
     :return: None.
     """
-    print("Reviewing Homework 1.1")
+    print("Reviewing Homework 1.1.1")
     runhw1_1()
 
 
@@ -39,10 +41,10 @@ def one_one():
 #   - illogical code that takes longer than 10 seconds to understand
 def one_two():
     """
-    Runs the main function for 1.2
+    Runs the main function for 1.1.2
     :return: None.
     """
-    print("Reviewing Homework 1.2")
+    print("Reviewing Homework 1.1.2")
     runhw1_2()
 
 
@@ -55,10 +57,10 @@ def one_two():
 #   - illogical code that takes longer than 10 seconds to understand
 def one_three():
     """
-    Runs the main function for 1.3
+    Runs the main function for 1.1.3
     :return: None.
     """
-    print("Reviewing Homework 1.3")
+    print("Reviewing Homework 1.1.3")
     runhw1_3()
 
 
@@ -71,10 +73,10 @@ def one_three():
 #   - illogical code that takes longer than 10 seconds to understand
 def one_four():
     """
-    Runs the main function for 1.4
+    Runs the main function for 1.1.4
     :return: None.
     """
-    print("Reviewing Homework 1.4")
+    print("Reviewing Homework 1.1.4")
     runhw1_4()
 
 
@@ -87,10 +89,10 @@ def one_four():
 #   - illogical code that takes longer than 10 seconds to understand
 def one_five():
     """
-    Runs the main function for 1.5
+    Runs the main function for 1.1.5
     :return: None.
     """
-    print("Reviewing Homework 1.5")
+    print("Reviewing Homework 1.1.5")
     runhw1_5()
 
 
@@ -103,10 +105,10 @@ def one_five():
 #   - illogical code that takes longer than 10 seconds to understand
 def one_six():
     """
-    Runs the main function for 1.6
+    Runs the main function for 1.1.6
     :return: None.
     """
-    print("Reviewing Homework 1.6")
+    print("Reviewing Homework 1.1.6")
     runhw1_6()
 
 
@@ -152,14 +154,14 @@ def overview():
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def selector():
+def selector(selection=1):
     """
     This function allows the user to select a homework's main function to run.
     The default is to run the first homework assignment.
     :return: None
     """
     # need to determine how to call a function from a dictionary or other location
-    SELECTOR_DICT[3]()
+    SELECTOR_DICT[selection]()
 
 
 # Structure: function
@@ -169,14 +171,15 @@ def selector():
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def display_menu():
+def display_menu_options(a_dict_of_options):
     """
     This function allows the user to select a homework's main function to run.
     The default is to run the first homework assignment.
     :return: None
     """
     # need to determine how to call a function from a dictionary or other location
-    SELECTOR_DICT[3]()
+    print("Enter the number of the exercise you want to see run:")
+    [print(f"{key}: {a_dict_of_options[key]}") for key in a_dict_of_options]
 
 
 # Structure: function
@@ -210,6 +213,7 @@ def review_loop():
 #   - illogical code that takes longer than 10 seconds to understand
 def main_hw1():
     overview()
+    display_menu_options(L1_1_EXERCISES_DICT)
     selector()
 
 

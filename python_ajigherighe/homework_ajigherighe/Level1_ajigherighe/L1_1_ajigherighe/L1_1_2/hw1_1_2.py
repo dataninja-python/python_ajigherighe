@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Section:          Level 1
-# Exercise:         1.2
+# Exercise:         1.1.2
 # Testing:          Python Syntax
 # Creation Date:    3/2/2023
 # Development OS:   Ubuntu 22.04
@@ -20,7 +20,8 @@
 #   - Terminal/Shell (optional if using PyCharm)
 
 
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe import hw1_1
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_1.hw1_1_1 import \
+    were_files_imported
 
 
 # This function checks if the string is empty ( x == "" ).
@@ -33,9 +34,14 @@ from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe
 #   - illogical code that takes longer than 10 seconds to understand
 def is_empty_string(string_to_check):
     """
-    Checks if the supplied list is empty
+    Checks if the supplied string is empty
     :return: Boolean. False = empty list. True = !False.
     """
+    # python and many other languages use 'truthiness'
+    # an empty string for example is considered false
+    # here an empty string should return false to the conditional
+    # not False = True which is what is returned here
+    # otherwise False is returned
     if not string_to_check:
         return True
     return False
@@ -54,6 +60,7 @@ def replace_space(input_string, replace_this, replace_with):
     Replaces the 'replace_this' with the 'replace_with' ascii code in a new string
     :return: Copy of the string after replacement.
     """
+    # uses python's built-in replace method in the string class to replace one part of a string with another
     output_string = input_string.replace(replace_this, replace_with)
     return output_string
 
@@ -66,16 +73,21 @@ def replace_space(input_string, replace_this, replace_with):
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def display_string(a_string="", to_replace=" ", separator=" "):
+def display_string(a_string="", to_replace=" ", replacement=" "):
     """
     Replace desired element in the supplied string with the provided string
     :return: None
     """
+    # as long as a non-empty string is provided (which is the default)
+    # we should replace the space here (or any supplied parameter) with the desired replacement
     if not is_empty_string(a_string):
         print("\nWe are able to proceed so the string is not empty.")
-        to_screen = f"We seek to replace {to_replace} in {a_string} with {separator}."
+        # use python's format string literal to create a string from supplied parameters
+        to_screen = f"We seek to replace {to_replace} in {a_string} with {replacement}."
+        # use repr() to return a printable version of supplied objects
+        # this should allow \n (newline code) and \t (tab code) to be displayed
         print(repr(to_screen))
-        new_string = replace_space(a_string, to_replace, separator)
+        new_string = replace_space(a_string, to_replace, replacement)
         print(new_string)
     else:
         print("\nThe supplied string is empty. To proceed, provide a string.")
@@ -96,14 +108,19 @@ def hw1_2():
     """
     print("The goal of this homework is to display each word in 'Hello World!' on the screen as desired.")
     print("My definition of this problem (after looking at the next exercise as well) is to create this function that")
-    print("for homework 1.2 it replaces the 'Hello World!' space with a new line.")
-    print("for homework 1.3 it replaces the 'Hello World!' space with a tab.")
-    print("Right now, the ascii codes used are hardcoded but this can be rewritten to allow inputing any valid code.\n")
+    print("for homework 1.1.2 it replaces the 'Hello World!' space with a new line replacing the space between \
+        the words.")
+    print("for homework 1.1.3 it replaces the 'Hello World!' space with a tab replacing the space between the words.")
+    print("Right now, the character codes used are hardcoded but this can be rewritten to take any valid character \
+        code.\n")
     hello = 'Hello World!'
     separator = '\n'
     spacer = ' '
-    if hw1_1.were_files_imported():
-        # hw1_1.hw1_helpers.overview()
+    # this confirms this entire module was imported
+    # the ultimate goal is to write a program the reviewer can use to see the results of any homework exercise
+    # the current plan is to use a modular architecture where each homework is created as a standalone script
+    # with the ability to import it into the greater program as each homework is completed
+    if were_files_imported():
         display_string(hello, spacer, separator)
     else:
         print("Unexpected error! Please examine code.")
@@ -111,7 +128,7 @@ def hw1_2():
 
 ################################################################################################################
 # Putting parentheses around the '__name__ ... ' section allows us to test this as a standalone script
-# and to import it as a module alone or as part of the larger package
+# and to import it as a module alone or as part of the larger package and program
 ################################################################################################################
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")

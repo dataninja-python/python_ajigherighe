@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Section:          Level 1
-# Exercise:         1.2
+# Exercise:         1.1.3
 # Testing:          Python Syntax
 # Creation Date:    3/6/2023
 # Development OS:   Ubuntu 22.04
@@ -19,26 +19,10 @@
 #   - PyCharm
 #   - Terminal/Shell (optional if using PyCharm)
 
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_4_ajigherighe import hw1_4
 
-
-# This function returns the type of the returned user input
-# Structure: function
-# Intent: prints the type of user input
-# Success:
-#   - displays input type as desired
-# Failure:
-#   - !success
-#   - illogical code that takes longer than 10 seconds to understand
-def display_input_type():
-    """
-    Display the type of the user supplied value
-    :return: None
-    """
-    user_input = hw1_4.get_user_input()
-    print(f"You entered: {user_input}")
-    print(f"Python treats your entry as the following type: {type(user_input)}")
-    print("NOTE: Python's input function by default returns a string type.")
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_1.hw1_1_1 import \
+    were_files_imported
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_2.hw1_1_2 import display_string
 
 
 # This is the main function that runs each Level 1 homework section
@@ -49,22 +33,25 @@ def display_input_type():
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def hw1_5():
+def hw1_3():
     """
-    Gets user input and displays it to the screen.
+    If required files are imported, the overview() and display_hello_world() functions are run.
     :return: None
     """
-    print("The goal is to homework is to display the the type of the user's input.")
-    print("My definition of this problem (after looking at the next exercise as well) is to use the")
-    print("function from 1.4 to get an input and print it using the type built-in function.")
-    display_input_type()
+    hello = 'Hello World!'
+    separator = '\t'
+    spacer = ' '
+    if were_files_imported():
+        display_string(hello, spacer, separator)
+    else:
+        print("Unexpected error! Please examine code.")
 
 
 ################################################################################################################
 # Putting parentheses around the '__name__ ... ' section allows us to test this as a standalone script
-# and to import it as a module alone or as part of the larger package
+# and to import it as a module alone or as part of the larger package and program
 ################################################################################################################
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
     # print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    hw1_5()
+    hw1_3()

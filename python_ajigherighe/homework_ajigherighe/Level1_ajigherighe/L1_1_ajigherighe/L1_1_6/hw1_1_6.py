@@ -2,7 +2,7 @@
 import copy
 
 # Section:          Level 1
-# Exercise:         1.6
+# Exercise:         1.1.6
 # Testing:          Python Syntax
 # Creation Date:    3/7/2023
 # Development OS:   Ubuntu 22.04
@@ -20,7 +20,7 @@ import copy
 #   - PyCharm
 #   - Terminal/Shell (optional if using PyCharm)
 
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_4_ajigherighe import hw1_4
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_4.hw1_1_4 import get_user_input
 from python_ajigherighe.constants import QUIT_CODE
 
 
@@ -51,6 +51,24 @@ def valid_float(test_value="float"):
 
 
 # Structure: function
+# Intent: checks if a number is greater than zero
+# Success:
+#   - True test_value > 0. False otherwise.
+# Failure:
+#   - !success
+#   - illogical code that takes longer than 10 seconds to understand
+def is_positive(test_value=1):
+    """
+    A validation function that checks if a number is positive. A positive number is defined as existing on the number
+    line to the right of 0.
+    :return: Boolean. True = > 0. False = < 0 (or to the left of 0 on a number line).
+    """
+    if test_value > 0:
+        return True
+    return False
+
+
+# Structure: function
 # Intent: return a dictionary with the specified value filled for the supplied key
 # Success:
 #   - updated dictionary with desired key-value pairing
@@ -64,10 +82,9 @@ def put_user_float_in_dict(a_dict, key_to_fill):
     :return: aDict = a dictionary containing an updated dictionary
     """
     tmp_dict = copy.deepcopy(a_dict)
-    quit_now = False
     while True:
         print(f"Please supply a valid value for the triangle's {key_to_fill} (enter 'q' to quit)")
-        user_input = hw1_4.get_user_input()
+        user_input = get_user_input()
         # allow user to quit the loop by entering 'q' or 'Q'
         # default action is to make the value attached to the current key = 0.0
         # changed from simply breaking out of the function to returning early on quit and
@@ -76,23 +93,30 @@ def put_user_float_in_dict(a_dict, key_to_fill):
             tmp_dict[key_to_fill] = 0.0
             tmp_dict["quit"] = True
             return tmp_dict
-        # if user does not quit check validity
-        valid = valid_float(user_input)
         # check if the supplied user input can become a floating point number
-        if not valid:
+        if not valid_float(user_input):
             print(f'{user_input} is invalid. Please provide a positive number with or without decimals.')
             continue
         else:
+            # to perform the remaining operations we need to convert the input to a float now
+            # before putting this here, I had errors in the program
+            user_input = float(user_input)
+            # validate that the input is not negative or 0
+            # NOTE: I confirmed that a collinear triangle can (as I thought) have a zero area
+            if not is_positive(user_input) and user_input != 0:
+                print(f"{user_input} is negative. This is invalid. Please enter a positive number or 0")
+                continue
             print(f"{user_input} is valid and will be the {key_to_fill} of the triangle.")
-            tmp_dict[key_to_fill] = float(user_input)
+            # explicitly inserting the now floating point input at the desired key
+            tmp_dict[key_to_fill] = user_input
             return tmp_dict
 
 
-# This function returns the type of the returned user input
 # Structure: function
-# Intent: prints the type of user input
+# Intent: use user inputs to calculate the area of a triangle = base x height
 # Success:
-#   - displays input type as desired
+#   - calculates triangles area
+#   - displays base, height, and area of triangle
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
@@ -122,35 +146,45 @@ def calculate_triangle_area():
         return
     # the actual multiplications of the base x height values stored in the dictionary as well
     triangle_dict["area"] = triangle_dict["base"] * triangle_dict["height"]
-    for key in triangle_dict:
+    # remembered from videos that comprehension is more efficient than looping
+    # thus, to practice, I converted the commented for loop into a list comprehension
+    # NOTE: another time I may test with time.time to see which is faster in reality
+    # NOTE: I program on a Quad GPU, 256 GB of RAM, AMD Threadripper data science machine running Ubuntu. Thus,
+    # I am unclear when sacrificing the clarity of using a for loop makes sense. I would create a virtual
+    # machine with production server/machine statistics to properly optimize and configure real code.
+    [print(f"The triangle's {key} is {triangle_dict[key]}") for key in triangle_dict if key != "quit"]
+    # old print approach using a for loop
+    '''for key in triangle_dict:
         if key == "quit":
             continue
-        print(f"The triangle's {key} is {triangle_dict[key]}.")
+        print(f"The triangle's {key} is {triangle_dict[key]}.")'''
 
 
-# This is the main function that runs each Level 1 homework section
 # Structure: function
-# Intent: print each item in a list as a line on the console
+# Intent: calculates a triangles area = base x height
 # Success:
-#   - loop through list printing each line
+#   - successfully calculating and displaying a triangles area
+#   - using validation to ensure the user provides data needed
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
 def hw1_6():
     """
-    Gets user input and displays it to the screen.
+    Calculates a triangles area = base x height using inputs from the user. Also, performs validation checks
+    against empty entries (as part of the imported get_user_input function) and non integers or floating point
+    numbers
     :return: None
     """
     print("The goal of this homework is to calculate a triangle's area using 2 user supplied inputs.")
     print("My definition of this problem (after looking at the next exercise as well) is to use the")
-    print("function from 1.4 to get inputs, validate each input using try/except, ")
-    print("multiply inputs that can be recast at floating point numbers together, and display them.\n")
+    print("function from 1.1.4 to get inputs, validate each input using try/except, ")
+    print("multiply inputs that can be recast as floating point numbers together, and display them.\n")
     calculate_triangle_area()
 
 
 ################################################################################################################
 # Putting parentheses around the '__name__ ... ' section allows us to test this as a standalone script
-# and to import it as a module alone or as part of the larger package
+# and to import it as a module alone or as part of the larger package and program
 ################################################################################################################
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")

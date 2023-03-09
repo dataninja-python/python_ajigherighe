@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Section:          Level 1
-# Exercise:         1.1
+# Exercise:         1.1.1
 # Testing:          Python Syntax
 # Creation Date:    3/2/2023
 # Development OS:   Ubuntu 22.04
@@ -19,12 +19,11 @@
 #   - PyCharm
 #   - Terminal/Shell (optional if using PyCharm)
 
-from python_ajigherighe import helpers
+from python_ajigherighe.helpers import InvalidImportException
 
 
-# Confirms the required modules/packages were imported
 # Structure: function
-# Intent: check it is possible to perform hw1_helpers.overview() function
+# Intent: check if is required files are accessible using try/except
 # Success:
 #   - 'Thanks for importing my full homework file.' output to the screen
 #   - printing the appropriate error message to coincide with the error
@@ -40,15 +39,15 @@ def were_files_imported():
     try:
         # attempts to call the desired function within the try section
         # if it works, returns True
-        # hw1_helpers.overview()
-        type(helpers.InvalidImportException)
+        # helpers.overview()
+        type(InvalidImportException)
         return True
     # function failed. now, we check if it is a common import error
     except ModuleNotFoundError:
         print("It is a common 'module not found error'")
         return False
     # if not a common error, we use our custom import error
-    except helpers.InvalidImportException:
+    except InvalidImportException:
         print("This case uses a custom general import exception.")
         return False
 
@@ -85,8 +84,8 @@ def hw1_1():
 
 
 ################################################################################################################
-# Putting parentheses around the '__name__ ... ' section allows us to test this as a stand alone script
-# and to import it as a module alone or as part of the larger package
+# Putting parentheses around the '__name__ ... ' section allows us to test this as a standalone script
+# and to import it as a module alone or as part of the larger package and program
 ################################################################################################################
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
