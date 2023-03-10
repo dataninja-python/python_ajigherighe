@@ -6,18 +6,12 @@
 
 # import all files in this homework section
 
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_1.hw1_1_1 import hw1_1_1 \
-    as runhw1_1
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_2.hw1_1_2 import hw1_1_2 \
-    as runhw1_2
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_3.hw1_1_3 import hw1_1_3 \
-    as runhw1_3
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_4.hw1_1_4 import hw1_1_4 \
-    as runhw1_4
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_5.hw1_1_5 import hw1_1_5 \
-    as runhw1_5
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_6.hw1_1_6 import hw1_1_6 \
-    as runhw1_6
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_1.hw1_1_1 import hw1_1 as runhw1_1
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_2.hw1_1_2 import hw1_2 as runhw1_2
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_3.hw1_1_3 import hw1_3 as runhw1_3
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_4.hw1_1_4 import hw1_4 as runhw1_4
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_5.hw1_1_5 import hw1_5 as runhw1_5
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_6.hw1_1_6 import hw1_6 as runhw1_6
 
 # created middleware imports
 from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe import L1_1_helpers

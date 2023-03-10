@@ -129,35 +129,39 @@ def calculate_triangle_area():
         "base": 0.0,
         "height": 0.0,
         "area": 0.0,
-        "quit": False
+        "quit": False,
+        "complete": False,
     }
-    # obtaining valid base and height values to calculate area
-    # added functionality to allow user to quit the program
-    triangle_dict = put_user_float_in_dict(triangle_dict, "base")
-    # check if user quit
-    if triangle_dict["quit"]:
-        print("Exiting before calculating the triangle's area")
-        return
-    # add height to dictionary or quit
-    triangle_dict = put_user_float_in_dict(triangle_dict, "height")
-    # check if user quit
-    if triangle_dict["quit"]:
-        print("Exiting before calculating the triangle's area")
-        return
-    # the actual multiplications of the base x height values stored in the dictionary as well
-    triangle_dict["area"] = triangle_dict["base"] * triangle_dict["height"]
-    # remembered from videos that comprehension is more efficient than looping
-    # thus, to practice, I converted the commented for loop into a list comprehension
-    # NOTE: another time I may test with time.time to see which is faster in reality
-    # NOTE: I program on a Quad GPU, 256 GB of RAM, AMD Threadripper data science machine running Ubuntu. Thus,
-    # I am unclear when sacrificing the clarity of using a for loop makes sense. I would create a virtual
-    # machine with production server/machine statistics to properly optimize and configure real code.
-    [print(f"The triangle's {key} is {triangle_dict[key]}") for key in triangle_dict if key != "quit"]
-    # old print approach using a for loop
-    '''for key in triangle_dict:
-        if key == "quit":
-            continue
-        print(f"The triangle's {key} is {triangle_dict[key]}.")'''
+    while not triangle_dict["complete"]:
+        # obtaining valid base and height values to calculate area
+        # added functionality to allow user to quit the program
+        triangle_dict = put_user_float_in_dict(triangle_dict, "base")
+        # check if user quit
+        if triangle_dict["quit"]:
+            print("Exiting before calculating the triangle's area")
+            return
+        # add height to dictionary or quit
+        triangle_dict = put_user_float_in_dict(triangle_dict, "height")
+        # check if user quit
+        if triangle_dict["quit"]:
+            print("Exiting before calculating the triangle's area")
+            return
+        # the actual multiplications of the base x height values stored in the dictionary as well
+        triangle_dict["area"] = triangle_dict["base"] * triangle_dict["height"]
+        triangle_dict["complete"] = True
+        # remembered from videos that comprehension is more efficient than looping
+        # thus, to practice, I converted the commented for loop into a list comprehension
+        # NOTE: another time I may test with time.time to see which is faster in reality
+        # NOTE: I program on a Quad GPU, 256 GB of RAM, AMD Threadripper data science machine running Ubuntu. Thus,
+        # I am unclear when sacrificing the clarity of using a for loop makes sense. I would create a virtual
+        # machine with production server/machine statistics to properly optimize and configure real code.
+        [print(f"The triangle's {key} is {triangle_dict[key]}") for key in triangle_dict if key != "quit" and
+            key != "complete"]
+        # old print approach using a for loop
+        '''for key in triangle_dict:
+            if key == "quit":
+                continue
+            print(f"The triangle's {key} is {triangle_dict[key]}.")'''
 
 
 # Structure: function
@@ -168,7 +172,7 @@ def calculate_triangle_area():
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def hw1_6():
+def hw1_1_6():
     """
     Calculates a triangles area = base x height using inputs from the user. Also, performs validation checks
     against empty entries (as part of the imported get_user_input function) and non integers or floating point
@@ -189,4 +193,4 @@ def hw1_6():
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
     # print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    hw1_6()
+    hw1_1_6()

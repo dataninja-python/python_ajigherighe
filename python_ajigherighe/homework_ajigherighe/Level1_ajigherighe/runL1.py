@@ -4,30 +4,14 @@
 # This contains items used in the homework for level 1
 ################################################################################################################
 
-# import all files in this homework section
+# import run files from each homework section
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.runL1_1 import main_hw1_1
 
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_1.hw1_1_1 import hw1_1_1 \
-    as runhw1_1
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_2.hw1_1_2 import hw1_1_2 \
-    as runhw1_2
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_3.hw1_1_3 import hw1_1_3 \
-    as runhw1_3
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_4.hw1_1_4 import hw1_1_4 \
-    as runhw1_4
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_5.hw1_1_5 import hw1_1_5 \
-    as runhw1_5
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_6.hw1_1_6 import hw1_1_6 \
-    as runhw1_6
+# import specific items from homework assignments
+from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_1 import hw1_1_1
 
-# created middleware imports
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe import L1_1_helpers
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe import L1_1_constants
+# import middleware
 
-# specific imports
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_4.hw1_1_4 import get_user_input
-from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe.L1_1_1.hw1_1_1 import \
-    were_files_imported
-from python_ajigherighe import constants
 
 
 # Structure: function
@@ -43,7 +27,7 @@ def one_one():
     :return: None.
     """
     print("Reviewing Homework 1.1.1")
-    runhw1_1()
+    main_hw1_1()
 
 
 # Structure: function
@@ -278,8 +262,8 @@ def review_loop():
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def main_hw1_1():
-    if were_files_imported():
+def main_hw1():
+    if hw1_1_1.were_files_imported():
         overview()
         review_loop()
     else:
@@ -292,4 +276,4 @@ def main_hw1_1():
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
     # print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    main_hw1_1()
+    main_hw1()

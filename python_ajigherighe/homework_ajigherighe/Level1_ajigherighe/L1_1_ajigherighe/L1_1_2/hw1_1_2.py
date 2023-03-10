@@ -101,7 +101,7 @@ def display_string(a_string="", to_replace=" ", replacement=" "):
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def hw1_2():
+def hw1_1_2():
     """
     If required files are imported, the overview() and display_hello_world() functions are run.
     :return: None
@@ -133,4 +133,4 @@ def hw1_2():
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
     # print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    hw1_2()
+    hw1_1_2()

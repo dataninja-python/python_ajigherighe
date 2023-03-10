@@ -29,7 +29,7 @@ from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def get_user_input():
+def get_user_input(input_cmd="Please provide an input:"):
     """
     Capture user input
     :return: output a local variable which contains a non-empty string supplied by the user.
@@ -38,7 +38,7 @@ def get_user_input():
     # loop continues if nothing is entered
     while True:
         # get user's input
-        output = input("Please provide an input: ")
+        output = input(input_cmd)
         # if empty "return to go and do not collect $200" lol
         # no if the user does not enter anything output or if for some unknown reason we get here output was
         # initialized empty and hitting return without making an entry results in output = an empty string
@@ -66,7 +66,7 @@ def get_user_input():
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def hw1_4():
+def hw1_1_4():
     """
     Gets user input and displays it to the screen.
     :return: None
@@ -86,4 +86,4 @@ def hw1_4():
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
     # print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    hw1_4()
+    hw1_1_4()

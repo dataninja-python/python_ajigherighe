@@ -71,7 +71,7 @@ def display_hello_world():
 
 
 # This is the main function that runs each Level 1 homework section
-def hw1_1():
+def hw1_1_1():
     """
     If required files are imported, the overview() and display_hello_world() functions are run.
     :return: None
@@ -90,4 +90,4 @@ def hw1_1():
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
     # print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    hw1_1()
+    hw1_1_1()

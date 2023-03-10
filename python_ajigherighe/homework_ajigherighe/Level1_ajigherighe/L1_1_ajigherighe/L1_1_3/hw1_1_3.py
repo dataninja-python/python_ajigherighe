@@ -33,7 +33,7 @@ from python_ajigherighe.homework_ajigherighe.Level1_ajigherighe.L1_1_ajigherighe
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def hw1_3():
+def hw1_1_3():
     """
     If required files are imported, the overview() and display_hello_world() functions are run.
     :return: None
@@ -54,4 +54,4 @@ def hw1_3():
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
     # print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    hw1_3()
+    hw1_1_3()

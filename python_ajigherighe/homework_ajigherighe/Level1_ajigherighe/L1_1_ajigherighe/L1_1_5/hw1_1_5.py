@@ -49,7 +49,7 @@ def display_input_type():
 # Failure:
 #   - !success
 #   - illogical code that takes longer than 10 seconds to understand
-def hw1_5():
+def hw1_1_5():
     """
     Gets user input and displays it to the screen.
     :return: None
@@ -67,4 +67,4 @@ def hw1_5():
 if (__name__ == '__main__'):
     # print("This package can be run as a standalone module or imported into a larger program.")
     # print("For this homework submission, run.py only allows the selection of this homework assignment.")
-    hw1_5()
+    hw1_1_5()
